@@ -1,6 +1,15 @@
 package fr.univ_amu.iut.exercice4;
 
 import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
@@ -34,16 +43,40 @@ public class MiseEnPage extends Application {
     // Stratégie conseillée :
     //
     // 1. Un BorderPane comme racine (setTop, setCenter, setBottom).
-    // 2. Top    : un MenuBar avec deux Menu "Fichier" et "Aide".
+    // 2. Top : un MenuBar avec deux Menu "Fichier" et "Aide".
     // 3. Center : un GridPane avec 2 lignes / 2 colonnes :
-    //                (0,0) Label "Nom :"     | (1,0) TextField
-    //                (0,1) Label "Email :"   | (1,1) TextField
+    // (0,0) Label "Nom :" | (1,0) TextField
+    // (0,1) Label "Email :" | (1,1) TextField
     // 4. Bottom : un HBox contenant deux boutons "Valider" et "Annuler",
-    //             avec un peu d'espacement et un padding.
+    // avec un peu d'espacement et un padding.
     //
     // Donne un id CSS utile sur les composants si tu veux les retrouver
     // facilement (les tests utilisent lookup sur les classes ".text-field"
     // et ".button", pas besoin d'id particulier).
+    BorderPane root = new BorderPane();
+    Scene scene = new Scene(root, 500, 300);
+    primaryStage.setScene(scene);
+    MenuBar menuBar = new MenuBar();
+    root.setTop(menuBar);
+    Menu menuFichier = new Menu("Fichier");
+    Menu menuAide = new Menu("Aide");
+    menuBar.getMenus().addAll(menuFichier, menuAide);
+    GridPane grid = new GridPane();
+    root.setCenter(grid);
+    Label labelNom = new Label("Nom :");
+    Label labelEmail = new Label("Email :");
+    grid.add(labelNom, 0, 0);
+    grid.add(labelEmail, 0, 1);
+    TextField champ1 = new TextField();
+    TextField champ2 = new TextField();
+    grid.add(champ1, 1, 0);
+    grid.add(champ2, 1, 1);
+    HBox hbox = new HBox();
+    root.setBottom(hbox);
+    Button boutonV = new Button("Valider");
+    Button boutonA = new Button("Annuler");
+    hbox.getChildren().addAll(boutonV, boutonA);
+    primaryStage.show();
   }
 
   public static void main(String[] args) {

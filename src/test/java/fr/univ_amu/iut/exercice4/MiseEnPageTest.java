@@ -32,7 +32,7 @@ class MiseEnPageTest {
 
   // --- Étape 1 : afficher la fenêtre ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void laFenetreEstVisible(FxRobot robot) {
     assertThat(stage.isShowing())
@@ -42,7 +42,7 @@ class MiseEnPageTest {
 
   // --- Étape 2 : créer le squelette BorderPane + Scene ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leRootEstUnBorderPane(FxRobot robot) {
     assertThat(stage.getScene().getRoot())
@@ -52,7 +52,7 @@ class MiseEnPageTest {
 
   // --- Étape 3 : ajouter un MenuBar dans la zone top ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leMenuBarEstEnHaut(FxRobot robot) {
     BorderPane root = (BorderPane) stage.getScene().getRoot();
@@ -63,7 +63,7 @@ class MiseEnPageTest {
 
   // --- Étape 4 : ajouter deux Menu au MenuBar ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leMenuBarContientDeuxMenus(FxRobot robot) {
     BorderPane root = (BorderPane) stage.getScene().getRoot();
@@ -73,7 +73,7 @@ class MiseEnPageTest {
         .hasSizeGreaterThanOrEqualTo(2);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void lesMenusOntLesBonsNoms(FxRobot robot) {
     BorderPane root = (BorderPane) stage.getScene().getRoot();
@@ -88,7 +88,7 @@ class MiseEnPageTest {
 
   // --- Étape 5 : ajouter un GridPane dans la zone center ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leGridPaneEstAuCentre(FxRobot robot) {
     BorderPane root = (BorderPane) stage.getScene().getRoot();
@@ -99,7 +99,7 @@ class MiseEnPageTest {
 
   // --- Étape 6 : ajouter les labels dans le GridPane ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void lesLabelsNomEtEmailExistent(FxRobot robot) {
     BorderPane root = (BorderPane) stage.getScene().getRoot();
@@ -118,7 +118,7 @@ class MiseEnPageTest {
 
   // --- Étape 7 : ajouter les TextField dans le GridPane ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void lesDeuxChampsDeSaisieExistent(FxRobot robot) {
     BorderPane root = (BorderPane) stage.getScene().getRoot();
@@ -133,7 +133,7 @@ class MiseEnPageTest {
 
   // --- Étape 8 : ajouter un HBox dans la zone bottom ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leHBoxEstEnBas(FxRobot robot) {
     BorderPane root = (BorderPane) stage.getScene().getRoot();
@@ -144,7 +144,7 @@ class MiseEnPageTest {
 
   // --- Étape 9 : ajouter le bouton Valider ---
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   void leBoutonValiderExiste(FxRobot robot) {
     HBox hbox = hboxEnBas();
